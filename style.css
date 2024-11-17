@@ -1,0 +1,176 @@
+:root {
+    --primary-color: #0a192f;
+    --secondary-color: #172a45;
+    --accent-color: #64ffda;
+    --text-color: #ccd6f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(10, 25, 47, 0.9);
+    padding: 1rem;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, var(--primary-color) 100%);
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+section {
+    padding: 5rem 2rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--accent-color);
+}
+
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.planet-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.planet-card:hover {
+    transform: translateY(-10px);
+}
+
+.planet {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+.mercury { background: linear-gradient(45deg, #727272, #a8a8a8); }
+.venus { background: linear-gradient(45deg, #e6b35a, #c7703d); }
+.earth { background: linear-gradient(45deg, #2233aa, #11aa44); }
+.mars { background: linear-gradient(45deg, #cc3311, #aa4422); }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background-size: cover;
+    background-position: center 63%;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item h3, .gallery-item p {
+    color: rgb(255, 255, 255);
+    z-index: 1; /* Обеспечивает видимость текста поверх фона */
+}
+
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    section {
+        padding: 3rem 1rem;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
